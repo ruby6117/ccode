@@ -1,0 +1,24 @@
+include ./objs.mk
+CFLAGS= -W -Wall
+CXXFLAGS= $(CFLAGS)
+DBG= -g
+#Comment/uncomment for debug
+#DBG=
+
+all: ../controllib.a
+
+%controllib.a: $(OBJS)
+	ar -rsc ../controllib.a $(OBJS)
+	@echo ""
+	@echo "controllib.a built -- don't forget to link your application against librt!"
+	@echo ""
+
+clean:
+	-rm -f *.o *~ *.a
+
+.cpp.o:
+	$(CXX) $(DBG) $(CXXFLAGS) -I../include -DUNIX -Wall -W -c $<
+
+.c.o:
+	$(CC) $(DBG) $(CFLAGS) -I../include -DUNIX -c $<
+
