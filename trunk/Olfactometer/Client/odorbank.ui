@@ -1,0 +1,465 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>OdorBank</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>OdorBank</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>751</width>
+            <height>72</height>
+        </rect>
+    </property>
+    <property name="font">
+        <font>
+            <family>Bitstream Vera Sans Mono</family>
+        </font>
+    </property>
+    <property name="caption">
+        <string>OdorBank</string>
+    </property>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line3_2_2_4_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>350</x>
+                <y>30</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>groupBox6</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>380</x>
+                <y>10</y>
+                <width>120</width>
+                <height>60</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Odor Selection</string>
+        </property>
+        <widget class="QComboBox">
+            <item>
+                <property name="text">
+                    <string>0 - No Odor</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>1 - Bromine</string>
+                </property>
+            </item>
+            <item>
+                <property name="text">
+                    <string>2 - Cheese</string>
+                </property>
+            </item>
+            <property name="name">
+                <cstring>odor_CB</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>81</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="currentItem">
+                <number>2</number>
+            </property>
+        </widget>
+    </widget>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line3_2_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>500</x>
+                <y>30</y>
+                <width>30</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QFrame">
+        <property name="name">
+            <cstring>frame4_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>220</x>
+                <y>20</y>
+                <width>131</width>
+                <height>40</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Raised</enum>
+        </property>
+        <widget class="QCheckBox">
+            <property name="name">
+                <cstring>enable_Chk</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>10</y>
+                    <width>111</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Bank 1 ON</string>
+            </property>
+            <property name="checked">
+                <bool>true</bool>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>pwm_GB</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>530</x>
+                <y>0</y>
+                <width>151</width>
+                <height>70</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Bank 1 PWM</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2_4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>38</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Actual:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3_4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>74</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Commanded:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel6_4</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>40</y>
+                    <width>16</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>%</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>pwm_le</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>40</y>
+                    <width>40</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>###</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>actualpwm_txt</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>20</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>###%</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>flow_GB</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>180</width>
+                <height>71</height>
+            </rect>
+        </property>
+        <property name="title">
+            <string>Bank 1 Flow</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>38</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Actual:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>74</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Commanded:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel6</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>40</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ml/m</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>flow_le</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>40</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>###.#</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>actualFlow_Txt</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>###.#ml/m</string>
+            </property>
+        </widget>
+    </widget>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line3_2</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>30</y>
+                <width>40</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line3_2_2_3</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>680</x>
+                <y>30</y>
+                <width>70</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>pwm_le</sender>
+        <signal>returnPressed()</signal>
+        <receiver>OdorBank</receiver>
+        <slot>fwdPWMChange()</slot>
+    </connection>
+    <connection>
+        <sender>flow_le</sender>
+        <signal>returnPressed()</signal>
+        <receiver>OdorBank</receiver>
+        <slot>fwdFlowChange()</slot>
+    </connection>
+    <connection>
+        <sender>enable_Chk</sender>
+        <signal>toggled(bool)</signal>
+        <receiver>OdorBank</receiver>
+        <slot>fwdEnableChange()</slot>
+    </connection>
+    <connection>
+        <sender>odor_CB</sender>
+        <signal>activated(int)</signal>
+        <receiver>OdorBank</receiver>
+        <slot>fwdOdorChanged()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="global" impldecl="in declaration">qmap.h</include>
+    <include location="global" impldecl="in declaration">qstring.h</include>
+    <include location="local" impldecl="in implementation">odorbank.ui.h</include>
+</includes>
+<forwards>
+    <forward>typedef QMap&lt;int, QString&gt; OdorMap</forward>
+</forwards>
+<variables>
+    <variable>double min_pwm;</variable>
+    <variable>double max_pwm;</variable>
+    <variable>double min_flow;</variable>
+    <variable>double max_flow;</variable>
+    <variable>int bank_id;</variable>
+</variables>
+<signals>
+    <signal>bankEnableSet(bool)</signal>
+    <signal>odorChanged(int)</signal>
+    <signal>pwmChanged(double)</signal>
+    <signal>flowChanged(double)</signal>
+</signals>
+<slots>
+    <slot>setID( int id )</slot>
+    <slot specifier="non virtual">setActualFlow( double flow )</slot>
+    <slot specifier="non virtual">setEnabled( bool b )</slot>
+    <slot specifier="non virtual">setOdorMap( const OdorMap &amp; in )</slot>
+    <slot specifier="non virtual">setActualPWM( double pct )</slot>
+    <slot access="protected" specifier="non virtual">fwdPWMChange()</slot>
+    <slot access="protected" specifier="non virtual">fwdFlowChange()</slot>
+    <slot specifier="non virtual">setCommandedFlow( double d )</slot>
+    <slot specifier="non virtual">setCommandedPWM( double d )</slot>
+    <slot access="protected" specifier="non virtual">fwdEnableChange()</slot>
+    <slot access="protected" specifier="non virtual">fwdOdorChanged()</slot>
+    <slot specifier="non virtual">setMaxFlow( double d )</slot>
+    <slot specifier="non virtual">setMinFlow( double d )</slot>
+    <slot specifier="non virtual">setMaxPWM( double d )</slot>
+    <slot specifier="non virtual">setMinPWM( double d )</slot>
+</slots>
+<functions>
+    <function access="protected">init()</function>
+    <function access="protected">destroy()</function>
+    <function access="protected" specifier="non virtual">redrawBankNameTexts()</function>
+    <function specifier="non virtual" returnType="double">maxFlow() const</function>
+    <function specifier="non virtual" returnType="double">minFlow() const</function>
+    <function specifier="non virtual" returnType="double">maxPWM() const</function>
+    <function specifier="non virtual" returnType="double">minPWM() const</function>
+    <function returnType="OdorMap">odorMap() const</function>
+    <function returnType="int">id() const</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>

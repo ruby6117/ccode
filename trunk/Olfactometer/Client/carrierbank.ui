@@ -1,0 +1,176 @@
+<!DOCTYPE UI><UI version="3.3" stdsetdef="1">
+<class>CarrierBank</class>
+<widget class="QWidget">
+    <property name="name">
+        <cstring>CarrierBank</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>751</width>
+            <height>74</height>
+        </rect>
+    </property>
+    <property name="caption">
+        <string>CarrierBank</string>
+    </property>
+    <widget class="Line">
+        <property name="name">
+            <cstring>line11</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>180</x>
+                <y>30</y>
+                <width>570</width>
+                <height>20</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>HLine</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="orientation">
+            <enum>Horizontal</enum>
+        </property>
+    </widget>
+    <widget class="QGroupBox">
+        <property name="name">
+            <cstring>carrier_GB</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>180</width>
+                <height>71</height>
+            </rect>
+        </property>
+        <property name="frameShape">
+            <enum>GroupBoxPanel</enum>
+        </property>
+        <property name="frameShadow">
+            <enum>Sunken</enum>
+        </property>
+        <property name="title">
+            <string>Carrier Air</string>
+        </property>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel2_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>38</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Actual:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel6_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>140</x>
+                    <y>40</y>
+                    <width>30</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>ml/m</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>textLabel3_3</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>40</y>
+                    <width>74</width>
+                    <height>21</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>Commanded:</string>
+            </property>
+        </widget>
+        <widget class="QLabel">
+            <property name="name">
+                <cstring>flow_txt</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>20</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>###.#ml/m</string>
+            </property>
+        </widget>
+        <widget class="QLineEdit">
+            <property name="name">
+                <cstring>flow_le</cstring>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>90</x>
+                    <y>40</y>
+                    <width>50</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string>###.#</string>
+            </property>
+        </widget>
+    </widget>
+</widget>
+<connections>
+    <connection>
+        <sender>flow_le</sender>
+        <signal>returnPressed()</signal>
+        <receiver>CarrierBank</receiver>
+        <slot>fwdFlowChanged()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="local" impldecl="in implementation">carrierbank.ui.h</include>
+</includes>
+<variables>
+    <variable>int carrier_id;</variable>
+    <variable>double max_flow;</variable>
+    <variable>double min_flow;</variable>
+</variables>
+<signals>
+    <signal>flowChanged(double)</signal>
+</signals>
+<slots>
+    <slot access="protected" specifier="non virtual">fwdFlowChanged()</slot>
+    <slot specifier="non virtual">setActualFlow( double d )</slot>
+    <slot specifier="non virtual">setMinFlow( double d )</slot>
+    <slot specifier="non virtual">setMaxFlow( double d )</slot>
+    <slot>setID( int id )</slot>
+</slots>
+<functions>
+    <function access="protected">init()</function>
+    <function specifier="non virtual" returnType="double">minFlow() const</function>
+    <function specifier="non virtual" returnType="double">maxFlow() const</function>
+    <function specifier="non virtual" returnType="int">id() const</function>
+</functions>
+<layoutdefaults spacing="6" margin="11"/>
+</UI>
