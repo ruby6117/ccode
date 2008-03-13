@@ -1,0 +1,11 @@
+
+all:
+	$(MAKE) -C src -f Makefile.userspace 
+
+clean:
+	$(MAKE) -C src -f Makefile.userspace clean
+	-rm -f *.o *.a *~ include/*~ src/*~
+	-rm -fr docs/html
+
+doc:
+	doxygen Doxyfile

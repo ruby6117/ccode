@@ -1,0 +1,37 @@
+Control Library v0.1.5
+May 15, 2007
+Calin Culianu <calin@ajvar.org>
+
+This is a small C++ library for writing control applications.  It can
+be compiled for either generic UNIX userspace or for kernel space under
+RTLinux 3.2.
+
+The default Makefile compiles the library for kernelspace/RTLinux, 
+
+For userspace, use Makefile.userspace.
+
+There is currently doxygen documentation in the docs/ directory but if
+you want more written, let me know.  To make the docs simply issue:
+make doc.  (Doxygen is required to make doc).
+
+The motivation for this library was that I got tired of writing my
+control apps in low-level C code under RTLinux.  I also wanted to be
+able to test control code in user space before running it in
+kernel space under RTLinux.  Hence, this library.
+
+The advantage using this library is that you don't have to worry about
+whether your code is running in userspace as a soft realtime process
+or in kernel space as hard realtime task.  You just use the Thread,
+Mutex, and other abstractions provided by this library and your app
+can use the same sourcecode whether it lives in realtime or
+nonrealtime.
+
+This level of indirection is useful for prototyping new control
+algorithms and/or strategies.  Also, if you are a C++ programmer using
+C-style objects such as pthreads is awkward compared to having a
+Thread class with a proper constructor, destructor, etc.
+
+How it's done:
+
+The bulk of the utility classes are written in a system-independent
+manner taking advantage of OS-specific stuff which lives in SysDep.c.
